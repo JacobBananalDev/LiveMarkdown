@@ -16,9 +16,9 @@ const MarkdownEditor = ({ markdown, setMarkdown }) => {
   };
 
   return (
-    <div className="flex w-full lg:w-1/2 h-80 border rounded-lg shadow-lg">
+    <div className="flex w-full min-h-full border rounded-lg shadow-lg">
       {/* Line numbers */}
-      <div className="bg-gray-200 p-2 text-right text-sm font-mono w-12">
+      <div className="bg-gray-200 rounded-l-lg p-2 text-right text-sm font-mono ">
         {lineNumbers.map((line) => (
           <div key={line} className="leading-6">{line}</div>
         ))}
@@ -30,7 +30,8 @@ const MarkdownEditor = ({ markdown, setMarkdown }) => {
         value={markdown}
         onChange={(e) => setMarkdown(e.target.value)}
         onScroll={handleScroll}
-        className="w-full h-full p-4 border-l resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+        autoFocus='true'
+        className="min-h-full w-full rounded-r-lg p-4 border-l resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
         placeholder="Enter your markdown code here..."
       />
     </div>
